@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Done Cogel - Jasa PayPal Terpercaya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%); }
+        .glass-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.08); }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- HEADER -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 p-2 rounded-xl text-white">
+                        <i class="fas fa-wallet text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold text-slate-900 tracking-tight italic">Done <span class="text-blue-600">Cogel</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-bold text-slate-500 uppercase text-xs tracking-widest">
+                    <a href="#" class="hover:text-blue-600 transition">Beranda</a>
+                    <a href="#kalkulator" class="hover:text-blue-600 transition">Rates</a>
+                    <a href="#faq" class="hover:text-blue-600 transition">Bantuan</a>
+                </div>
+                <a href="https://wa.me/6288274325328" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+                    Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient text-white py-20 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tighter uppercase italic">
+                    Top Up & Convert <br><span class="text-blue-400">PayPal</span> Tercepat.
+                </h1>
+                <p class="text-lg text-blue-100/80 leading-relaxed max-w-lg font-medium">
+                    OrderSaldo di Done Cogel memberikan kurs terbaik untuk isi saldo maupun pencairan PayPal ke Bank Lokal & E-Wallet. Aman, amanah, dan terpercaya.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4 font-bold text-sm">
+                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg border border-white/20"><i class="fas fa-bolt text-yellow-400"></i> PROSES 5 MENIT</div>
+                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg border border-white/20"><i class="fas fa-shield-check text-green-400"></i> TANPA BIAYA ADMIN</div>
+                </div>
+            </div>
+
+            <!-- CALCULATOR -->
+            <div id="kalkulator" class="glass-card text-slate-900 p-8 md:p-10">
+                <h3 class="text-xl font-black uppercase mb-8 flex items-center gap-3">
+                    <i class="fas fa-calculator text-blue-600"></i> Kalkulator Saldo
+                </h3>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Pilih Layanan</label>
+                        <select id="type" onchange="calculate()" class="w-full p-4 bg-slate-100 border-none rounded-2xl outline-none font-bold focus:ring-2 focus:ring-blue-500 transition">
+                            <option value="convert">Convert PayPal (Jual Saldo Ke Admin)</option>
+                            <option value="topup">Top Up PayPal (Beli Saldo Dari Admin)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Jumlah (USD)</label>
+                        <input type="number" id="usdInput" oninput="calculate()" value="100" class="w-full p-4 bg-slate-100 border-none rounded-2xl outline-none font-black text-2xl focus:ring-2 focus:ring-blue-500 transition">
+                    </div>
+                    <div class="bg-blue-600 p-8 rounded-3xl text-white shadow-xl shadow-blue-100">
+                        <p class="text-[10px] font-bold uppercase tracking-widest opacity-70 mb-1">Total Yang Diterima/Dibayar</p>
+                        <p id="totalDisplay" class="text-4xl font-black">Rp 0</p>
+                        <p class="text-[10px] mt-4 opacity-70 italic font-medium">Rate: Rp <span id="rateLabel">13.000</span> / $1 USD</p>
+                    </div>
+                    <button onclick="sendWA()" class="w-full bg-green-500 hover:bg-green-600 text-white font-black py-5 rounded-2xl transition-all flex items-center justify-center gap-3 text-lg shadow-lg shadow-green-100">
+                        <i class="fab fa-whatsapp text-2xl"></i> HUBUNGI WHATSAPP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 px-4 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black uppercase italic tracking-widest mb-4 text-blue-600">Pusat Bantuan</h2>
+            <p class="text-slate-500 font-medium">Jawaban lengkap untuk mempermudah transaksi Anda di Done Cogel.</p>
+        </div>
+        
+        <div class="space-y-4">
+            <!-- Q1 -->
+            <details class="group bg-white border border-slate-200 rounded-2xl p-6 transition duration-300 open:shadow-lg open:border-blue-300">
+                <summary class="font-bold text-lg flex justify-between items-center cursor-pointer">
+                    Apa saja layanan yang tersedia?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="mt-4 text-slate-600 leading-relaxed border-t pt-4">
+                    Kami menyediakan dua layanan utama: **Top Up Saldo PayPal** (kami mengirim saldo ke akun PayPal Anda) dan **Jasa Convert/Pencairan** (Anda mengirim saldo PayPal ke kami, dan kami bayar dengan Rupiah ke Bank/E-Wallet Anda).
+                </div>
+            </details>
+
+            <!-- Q2 -->
+            <details class="group bg-white border border-slate-200 rounded-2xl p-6 transition duration-300 open:shadow-lg open:border-blue-300">
+                <summary class="font-bold text-lg flex justify-between items-center cursor-pointer">
+                    Bagaimana alur transaksinya?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="mt-4 text-slate-600 leading-relaxed border-t pt-4 space-y-2">
+                    1. Masukkan jumlah USD di kalkulator atas.<br>
+                    2. Klik tombol WhatsApp untuk terhubung dengan Admin.<br>
+                    3. Admin akan memberikan instruksi pembayaran/email PayPal.<br>
+                    4. Lakukan transfer sesuai instruksi.<br>
+                    5. Kirim bukti transfer dan saldo akan diproses dalam 5-10 menit.
+                </div>
+            </details>
+
+            <!-- Q3 -->
+            <details class="group bg-white border border-slate-200 rounded-2xl p-6 transition duration-300 open:shadow-lg open:border-blue-300">
+                <summary class="font-bold text-lg flex justify-between items-center cursor-pointer">
+                    Berapa lama prosesnya?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="mt-4 text-slate-600 leading-relaxed border-t pt-4">
+                    Proses normal hanya memakan waktu **5 hingga 15 menit** setelah pembayaran kami terima atau saldo PayPal masuk ke akun kami. Kecepatan adalah prioritas kami di Done Cogel.
+                </div>
+            </details>
+
+            <!-- Q4 -->
+            <details class="group bg-white border border-slate-200 rounded-2xl p-6 transition duration-300 open:shadow-lg open:border-blue-300">
+                <summary class="font-bold text-lg flex justify-between items-center cursor-pointer">
+                    Metode pembayaran yang diterima?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="mt-4 text-slate-600 leading-relaxed border-t pt-4">
+                    Kami mendukung penuh semua **Bank Lokal Indonesia** (BCA, Mandiri, BRI, BNI, dll) serta semua **E-Wallet populer** seperti DANA, OVO, GoPay, ShopeePay, LinkAja, dan pembayaran via QRIS.
+                </div>
+            </details>
+
+            <!-- Q5 -->
+            <details class="group bg-white border border-slate-200 rounded-2xl p-6 transition duration-300 open:shadow-lg open:border-blue-300">
+                <summary class="font-bold text-lg flex justify-between items-center cursor-pointer">
+                    Apakah aman? Ada bukti transfer?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="mt-4 text-slate-600 leading-relaxed border-t pt-4 font-medium">
+                    Tentu saja sangat aman. Done Cogel adalah jasa profesional. Setiap transaksi yang selesai akan diberikan **bukti transfer/screenshot (resi)** yang jelas melalui chat WhatsApp Anda sebagai jaminan keaslian transaksi.
+                </div>
+            </details>
+
+            <!-- Q6 -->
+            <details class="group bg-white border border-slate-200 rounded-2xl p-6 transition duration-300 open:shadow-lg open:border-blue-300">
+                <summary class="font-bold text-lg flex justify-between items-center cursor-pointer">
+                    Bisa refund?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="mt-4 text-slate-600 leading-relaxed border-t pt-4">
+                    Refund 100% dapat dilakukan jika Anda membatalkan pesanan **sebelum saldo PayPal atau Rupiah kami kirimkan**. Namun, jika dana sudah sukses terkirim ke tujuan, transaksi tidak dapat dibatalkan atau dikembalikan.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 border-b border-white/5 pb-16">
+            <div class="space-y-6">
+                <h3 class="text-3xl font-black italic tracking-tighter">Done <span class="text-blue-500">Cogel</span></h3>
+                <p class="text-slate-400 text-sm leading-relaxed font-medium max-w-sm">
+                    Jasa pengisian dan pencairan saldo PayPal yang mengutamakan keamanan dan kecepatan. Solusi keuangan digital Anda ada di tangan yang tepat.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500">Kontak Resmi</h4>
+                <div class="space-y-4 text-lg font-bold">
+                    <div class="flex items-center gap-4">
+                        <i class="fab fa-whatsapp text-green-500"></i>
+                        <span>+62 882-7432-5328</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-slate-400">
+                        <i class="fas fa-history text-blue-500"></i>
+                        <span>Setiap Hari: 07:00 – 21:00 WIB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-10 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-600">
+            © 2026 Done Cogel - Trusted Digital Exchange Service
+        </div>
+    </footer>
+
+    <script>
+        // --- DATA RATE ---
+        const RATE_CONVERT = 13000; 
+        const RATE_TOPUP = 16500;   // Bisa diubah di sini (antara 16k - 17k)
+
+        function calculate() {
+            const type = document.getElementById('type').value;
+            const usd = document.getElementById('usdInput').value;
+            const rateLabel = document.getElementById('rateLabel');
+            
+            const currentRate = (type === 'convert') ? RATE_CONVERT : RATE_TOPUP;
+            rateLabel.innerText = new Intl.NumberFormat('id-ID').format(currentRate);
+
+            const total = usd * currentRate;
+            const formatted = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(total);
+
+            document.getElementById('totalDisplay').innerText = usd > 0 ? formatted : 'Rp 0';
+        }
+
+        function sendWA() {
+            const type = document.getElementById('type').value;
+            const usd = document.getElementById('usdInput').value;
+            const currentRate = (type === 'convert') ? RATE_CONVERT : RATE_TOPUP;
+            const total = usd * currentRate;
+            const formattedTotal = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(total);
+            
+            if(!usd || usd <= 0) { alert("Silakan isi jumlah USD terlebih dahulu!"); return; }
+
+            const label = (type === 'convert') ? "CONVERT (JUAL SALDO)" : "TOP UP (BELI SALDO)";
+            const pesan = `Halo Done Cogel, saya mau order:\n\n*Layanan:* ${label}\n*Nominal:* $${usd}\n*Rate:* Rp ${currentRate.toLocaleString('id-ID')}\n*Estimasi:* ${formattedTotal}\n\nMohon petunjuk pembayarannya, admin.`;
+            
+            window.open(`https://wa.me/6288274325328?text=${encodeURIComponent(pesan)}`);
+        }
+
+        window.onload = calculate;
+    </script>
+</body>
+  </html>
